@@ -62,12 +62,12 @@ driver.close()
 
 # Write data to csv-file
 print('Extracting to CSV')
-df.to_csv('C:\\Users\\amorrow\\Documents\\AWS_Workshops\\aws_workshops_v1.csv', encoding='utf-8',index=False)
+df.to_csv('file_path\\file_name.csv', encoding='utf-8',index=False)
 print('Extract to CSV Complete')
 
 # Read csv-file
 print('Reading-in csv-file')
-aws_workshops_df = pd.read_csv('C:\\Users\\amorrow\\Documents\\AWS_Workshops\\aws_workshops_v1.csv')
+aws_workshops_df = pd.read_csv('file_path\\file_name')
 # Begin data-cleaning process
 print('Begin data cleaning...')
 aws_workshops_df['categories'] = aws_workshops_df['categories'].map(lambda x: x.lstrip('Categories:'))
@@ -76,4 +76,4 @@ aws_workshops_df['level'] = aws_workshops_df['level'].map(lambda x: x.lstrip('Le
 aws_workshops_df['link'] = aws_workshops_df['link'].map(lambda x: x.lstrip("['").rstrip("']"))
 print('End data cleaning...\nExtracting to new CSV')
 # Write data to new csv-file
-aws_workshops_df.to_csv('C:\\Users\\amorrow\\Documents\\AWS_Workshops\\aws_workshops_v2.csv', index=False)
+aws_workshops_df.to_csv('file_path\\file_name', index=False)
